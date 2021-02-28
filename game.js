@@ -70,7 +70,7 @@ getNewQuestion = () => {
     currentQuestion = availableQuestions[questionsIndex];
     question.innerText = currentQuestion.question;
 
-    choices.forEach(choices => {
+    choices.forEach(choice => {
         const number = choice.dataset['number'];
         choice.innerText = currentQuestion['choice' + number];
     });
@@ -102,3 +102,10 @@ choices.forEach(choice => {
         }, 1000)
     });
 });
+
+incrementScore = num => {
+    score += num;
+    scoreText.innerText = score;
+};
+
+startGame();
